@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.yaukie.frame</groupId>
+    <artifactId>x-common-pro</artifactId>
+    <version>2021.4</version>
+    <packaging>pom</packaging>
+
+    <name>x-common-pro</name>
+    <description>x-common-pro</description>
+
+    <properties>
+        <kettle-version>9.2.0.0-179</kettle-version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+    </properties>
+
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.yml</include>
+                    <include>**/*.xml</include>
+                    <include>**/*.properties</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <testResources>
+            <testResource>
+                <directory>src/test/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </testResource>
+            <testResource>
+                <directory>src/test/resources</directory>
+            </testResource>
+        </testResources>
+    </build>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.yaukie.core</groupId>
+                <artifactId>x-common-base</artifactId>
+                <version>2021.4</version>
+            </dependency>
+            <!--引入kettle核心包-->
+            <dependency>
+                <groupId>pentaho-kettle</groupId>
+                <artifactId>kettle-core</artifactId>
+                <version>${kettle-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>pentaho-kettle</groupId>
+                <artifactId>kettle-engine</artifactId>
+                <version>${kettle-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>pentaho-kettle</groupId>
+                <artifactId>kettle-dbdialog</artifactId>
+                <version>${kettle-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>pentaho-kettle</groupId>
+                <artifactId>kettle-ui-swt</artifactId>
+                <version>${kettle-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.pentaho.reporting.library</groupId>
+                <artifactId>libbase</artifactId>
+                <version>${kettle-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>jfree</groupId>
+                <artifactId>jcommon</artifactId>
+                <version>1.0.16</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-server</artifactId>
+                <version>8.1.15.v20140411</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-continuation</artifactId>
+                <version>8.1.15.v20140411</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-http</artifactId>
+                <version>8.1.15.v20140411</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-io</artifactId>
+                <version>8.1.15.v20140411</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-plus</artifactId>
+                <version>8.1.15.v20140411</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-security</artifactId>
+                <version>8.1.15.v20140411</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-util</artifactId>
+                <version>8.1.15.v20140411</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-webapp</artifactId>
+                <version>8.1.15.v20140411</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-xml</artifactId>
+                <version>8.1.15.v20140411</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-servlet</artifactId>
+                <version>8.1.15.v20140411</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.xmlgraphics</groupId>
+                <artifactId>xmlgraphics-commons</artifactId>
+                <version>1.5</version>
+            </dependency>
+            <!-- 定义 lombok 版本 -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.16.18</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.68</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.8.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>1.7.7</version>
+            </dependency>
+            <!--kettle核心包引入结束-->
+
+
+
+        </dependencies>
+    </dependencyManagement>
+
+
+    <!--配置远程仓库地址,将本地jar推送到此处这里使用阿里云的私服仓库 开始-->
+    <repositories>
+        <repository>
+            <id>pentaho</id>
+            <name>pentaho maven</name>
+            <url>https://nexus.pentaho.org/content/groups/omni/</url>
+        </repository>
+    </repositories>
+    <!--配置远程仓库地址,将本地jar推送到此处 结束-->
+
+    <distributionManagement>
+        <repository>
+            <id>rdc-releases</id>
+            <url>https://repo.rdc.aliyun.com/repository/128991-release-EJH8o1/</url>
+        </repository>
+        <snapshotRepository>
+            <id>rdc-snapshots</id>
+            <url>https://repo.rdc.aliyun.com/repository/128991-snapshot-NY2Ub0/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+</project>
